@@ -1,0 +1,21 @@
+diff --git a/package/sdl_mixer/sdl_mixer.mk b/package/sdl_mixer/sdl_mixer.mk
+index 897b308e9d..5d95f9b463 100644
+--- ./package/sdl_mixer/sdl_mixer.mk
++++ ./package/sdl_mixer/sdl_mixer.mk
+@@ -26,14 +26,14 @@ SDL_MIXER_CONF_OPTS = \
+ 	--disable-music-flac # configure script fails when cross compiling
+ 
+ ifeq ($(BR2_PACKAGE_LIBMAD),y)
+-SDL_MIXER_CONF_OPTS += --enable-music-mp3-mad-gpl
++SDL_MIXER_CONF_OPTS += --enable-music-mp3-mad-gpl --disable-music-mp3-mad-gpl-shared
+ SDL_MIXER_DEPENDENCIES += libmad
+ else
+ SDL_MIXER_CONF_OPTS += --disable-music-mp3-mad-gpl
+ endif
+ 
+ ifeq ($(BR2_PACKAGE_LIBVORBIS),y)
+-SDL_MIXER_CONF_OPTS += --enable-music-ogg
++SDL_MIXER_CONF_OPTS += --enable-music-ogg --disable-music-ogg-shared
+ SDL_MIXER_DEPENDENCIES += libvorbis
+ else
+ SDL_MIXER_CONF_OPTS += --disable-music-ogg

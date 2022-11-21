@@ -12,8 +12,10 @@ wget https://buildroot.org/downloads/$BUILDROOT_VERSION.tar.gz
 tar -xf ./$BUILDROOT_VERSION.tar.gz
 rm -f ./$BUILDROOT_VERSION.tar.gz
 mv ./$BUILDROOT_VERSION ./buildroot
-cd ./buildroot
 
+cd ./buildroot
+patch -p1 < ../libpng12.patch
+patch -p1 < ../sdl_mixer.patch
 cp ~/trimuismart.config ./.config
 
 if [ -f ~/trimuismart-toolchain.tar.xz ]; then

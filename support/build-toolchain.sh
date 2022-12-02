@@ -22,6 +22,7 @@ if [ -f ~/trimuismart-toolchain.tar.xz ]; then
  	tar -xf ~/trimuismart-toolchain.tar.xz -C /opt
 else
 	export FORCE_UNSAFE_CONFIGURE=1
+	make oldconfig
 	make world
 
 	mkdir -p /opt/trimuismart-toolchain

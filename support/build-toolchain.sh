@@ -31,4 +31,5 @@ else
 	cp ~/relocate-sdk.sh /opt/trimuismart-toolchain/
 	cp ~/sdk-location /opt/trimuismart-toolchain/
 	/opt/trimuismart-toolchain/relocate-sdk.sh
+	cp ~/hwcap.h /opt/trimuismart-toolchain/usr/arm-buildroot-linux-gnueabihf/sysroot/usr/include/asm/
 fi
